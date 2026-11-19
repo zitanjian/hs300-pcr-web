@@ -171,7 +171,7 @@ def fetch_index_history(start_date: str, end_date: Optional[str] = None) -> pd.D
     # Current AkShare interface and output fields documented in its index docs.
     try:
         raw = call_retry(
-            ak.index_zh_a_hist, symbol=INDEX_SYMBOL, period="daily",
+            ak.index_zh_hist_em, symbol=INDEX_SYMBOL, period="daily",
             start_date=start, end_date=end, label="沪深300历史行情",
         )
         if raw is not None and not raw.empty:
@@ -187,12 +187,12 @@ def fetch_index_history(start_date: str, end_date: Optional[str] = None) -> pd.D
                 return df[[c for c in ["date", "open", "high", "low", "close", "volume", "amount"] if c in df]].sort_values("date").drop_duplicates("date")
     except Exception as exc:
         last_error = exc
-        logger.warning("index_zh_a_hist 不可用，尝试备用数据源：%s", exc)
+        logger.warning("index_zh_hist_em 不可用，尝试备用数据源：%s", exc)
 
     # Current alternative in AkShare: Tencent daily index endpoint.
     try:
         raw = call_retry(
-            ak.stock_zh_index_daily_tx, symbol="sh000300",
+            ak.index_zh_daily_tx, symbol="sh000300",
             start_date=start, end_date=end, label="沪深300备用历史行情",
         )
         if raw is not None and not raw.empty:
