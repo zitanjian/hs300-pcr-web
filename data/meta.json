@@ -1,14 +1,14 @@
 {
-  "index_last_date": "2026-11-13",
+  "index_last_date": "2026-11-18",
   "index_rows": 615,
   "updated_at": "2026-11-19T09:42:50+08:00",
-  "etf_last_date": "2026-11-13",
+  "etf_last_date": "2026-11-18",
   "etf_rows": 615,
   "last_pipeline_at": "2026-11-19T09:42:50+08:00",
   "io_rows": 615,
   "common_rows": 615,
   "io_update_error": "",
-  "io_last_date": "2026-10-15",
-  "io_observed_at": "2026-10-15T17:40:46+08:00",
-  "auto_daily_update_date": "2026-10-14"
+  "io_last_date": "2026-10-18",
+  "io_observed_at": "2026-10-18T17:40:46+08:00",
+  "auto_daily_update_date": "2026-10-18"
 }
